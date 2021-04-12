@@ -10,8 +10,9 @@ Tutorial to install [dlib](https://www.pyimagesearch.com/2017/03/27/how-to-insta
 `
 
 ## Compile & Run: 
+Only available testing version right now:   
 ` 
-    python main.py
+    python tests/predictor.py
 `
 
 
