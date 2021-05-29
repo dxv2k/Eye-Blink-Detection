@@ -98,14 +98,19 @@ while True:
             # if the eyes were closed for a sufficient number of
             # then sound the alarm
             if COUNTER >= EYE_AR_CONSEC_FRAMES:
-               print('[INFO] Eye close for too long....')
+                print('[INFO] Eye close for too long....')
+                cv2.putText(frame, "DROWSINESS ALERT!", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+
         # otherwise, the eye aspect ratio is not below the blink
         # threshold, so reset the counter and alarm
         else:
             COUNTER = 0
             EO_COUNTER += 1 
             if EO_COUNTER >= EO_CONSEC_FRAMES: 
-               print('[INFO] Eye OPEN for too long, please blink....')
+                print('[INFO] Eye OPEN for too long, please blink....')
+                cv2.putText(frame, "DROWSINESS ALERT!", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
 
     cv2.imshow("Face Landmarks", frame)
